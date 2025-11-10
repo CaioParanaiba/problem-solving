@@ -3,13 +3,20 @@ using namespace std;
 
 #define ll long long
 
-void DFS(int at,int n,vector<vector<int>>& adj,vector<bool>&vis)
+bool DFS(int at,vector<vector<int>>&adj,vector<bool>&vis)
 {
   vis[at]=1;
 
-  for(auto ii : adj[at])
+  if(adj[at].size()==2)
   {
-    if(!vis[ii]) DFS(ii,n,adj,vis);
+    for(auto ii : adj[at])
+    {
+      if(!vis[ii]) DFS(ii,adj,vis);
+    }
+    return true;
+  }
+  else{
+    return false;
   }
 }
 
@@ -18,7 +25,6 @@ int main() {
   int n,m;
   cin >> n >> m;
 
-
   vector<vector<int>> adj(n);
   vector<bool> vis(n);
 
@@ -26,7 +32,6 @@ int main() {
   {
     int x,y;
     cin >> x >> y;
-
     x--;
     y--;
 
@@ -34,23 +39,16 @@ int main() {
     adj[y].push_back(x);
   }
 
-  DFS(0,n,adj,vis);
-
-  vector<int> pos;
-  for(int i=1;i<n;i++)
+  int ciclos = 0;
+  for(int i=0;i<n;i++)
   {
     if(!vis[i])
     {
-      pos.push_back(i+1);
-      DFS(i,n,adj,vis);
+      if(DFS(i,adj,vis)) ciclos++;
     }
   }
 
-  cout << pos.size() << endl;
-  for(auto ii : pos)
-  {
-    cout << "1 " << ii << endl;
-  }
+  cout << ciclos << endl;
 
   return 0;
 }
