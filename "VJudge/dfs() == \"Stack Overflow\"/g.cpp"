@@ -1,16 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void DFS(int at,int pai,int&ciclos,vector<vector<int>>&adj,vector<bool>&vis)
+bool DFS(int at,int pai,vector<vector<int>>&adj,vector<bool>&vis)
 {
   vis[at]=1;
 
   if(adj[at].size()==2)
   {
-    if(!vis[0]) DFS(0,pai,ciclos,adj,vis);
-    else if(!vis[1]) DFS(1,pai,ciclos,adj,vis);
-    else if(adj[at][0]==pai || adj[at][1]==pai) ciclos++;
+    if(!vis[0]) DFS(0,pai,adj,vis);
+    else if(!vis[1]) DFS(1,pai,adj,vis);
+    else
+    {
+      for(auto ii: adj[at])
+      {
+        if(ii==pai) return true;
+      }
+    }
   }
+  else return false;
 }
 
 int main() {
@@ -36,7 +43,7 @@ int main() {
   int ciclos = 0;
   for(int i=0;i<n;i++)
   {
-    if(!vis[i]) DFS(i,i,ciclos,adj,vis);
+    if(!vis[i] && DFS(i,i,adj,vis)) ciclos++;
   }
 
   cout << ciclos << endl;
