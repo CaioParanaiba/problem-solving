@@ -9,9 +9,10 @@ int Modulo(int x,int y)
   else return x-y;
 }
 
-int PD(int at,int k,int n,vector<int>&pedra,vector<int>&custo)
+int PD(int at,int k,int n,vector<int>&pedra,vector<int>&custo,vector<int>caminho)
 {
   int menor = custo[at-1] + abs(pedra[at]-pedra[at-1]);
+  menor_c = 1;
   for(int i=2;i<=k;i++)
   {
     if(at-i>=0)
@@ -31,6 +32,7 @@ int main() {
 
   vector<int> pedra(n);
   vector<int> custo(n,0);
+  vector<int> caminho;
 
   for(int i=0;i<n;i++)
   {
@@ -40,7 +42,7 @@ int main() {
   custo[0]=pedra[0];
   for(int i=1;i<n;i++)
   {
-    custo[i] = PD(i,k,n,pedra,custo);
+    custo[i] = PD(i,k,n,pedra,custo,caminho);
   }
 
   cout << custo[n-1] << '\n';
