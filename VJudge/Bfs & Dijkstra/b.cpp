@@ -1,47 +1,50 @@
 #include <bits/stdc++.h>
+#include <queue>
 using namespace std;
 
 #define ll long long
 
 int main() {
 
-  int n,m;
+  int n, m;
   cin >> n >> m;
 
-  vector<vector<pair<int,int>>> adj(n,0);
-  vector<int> dist(n,-1);
-  dist[0]=0;
+  vector<pair<ll, int>> adj[n + 1];
+  vector<ll> d(n + 1, 1e18);
+  d[1] = 0;
 
-  for(int i=0;i<m;i++)
-  {
-    int a,b,c;
+  for (int i = 0; i < m; i++) {
+    int a, b, c;
     cin >> a >> b >> c;
-    a--;
-    b--;
-    
-    adj[a].push_back({c,b});
+    adj[a].push_back({c, b});
   }
 
-  priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
-  pq.push({0,0});
+  priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>>
+      pq;
 
-  while(pq.size())
-  {
-    auto[w,u] = pq.top();
+  pq.push({0, 1});
+
+  while (pq.size()) {
+    auto [w, v] = pq.top();
     pq.pop();
 
-    for(auto[wv,v]:adj[u])
-    {
-      if((dist[u]!=-1 && w+wv<dist[u]) || dist[u]==-1)
-      {
-        dist[u]=w+wv;
-        pq.push(dist[v],v);
+    if (w > d[v])
+      continue;
+
+    for (auto [wu, u] : adj[v]) {
+      if (w + wu < d[u]) {
+        d[u] = wu + w;
+        pq.push({d[u], u});
       }
     }
   }
 
-
-
+  string sp = "";
+  for (int i = 1; i <= n; i++) {
+    cout << sp << d[i];
+    sp = " ";
+  }
+  cout << '\n';
 
   return 0;
 }
