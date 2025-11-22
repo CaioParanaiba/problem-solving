@@ -14,15 +14,15 @@ int main() {
     int a, b, w;
     cin >> a >> b >> w;
     adj[a].push_back({w, b});
+    adj[b].push_back({w, a});
   }
 
-  vector<int> d(n + 1, 1e9);
+  vector<ll> d(n + 1, 1e18);
   d[1] = 0;
   vector<int> pai(n + 1, 0);
   pai[1] = -1;
 
-  priority_queue<pair<int, int>, vector<pair<int, int>>,
-                 greater<pair<int, int>>>
+  priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>>
       pq;
   pq.push({0, 1});
 

@@ -27,7 +27,7 @@ int main() {
     }
 
     vector<vector<int>> d(n, vector<int>(m, 1e9));
-    d[0][0] = 0;
+    d[0][0] = grid[0][0];
 
     priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>,
                    greater<tuple<int, int, int>>>
