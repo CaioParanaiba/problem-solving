@@ -1,5 +1,10 @@
 formulas:
   Untitled: ""
+properties:
+  file.name:
+    displayName: Problema
+  file.links:
+    displayName: Tópicos
 views:
   - type: table
     name: Table
@@ -16,13 +21,11 @@ views:
       - Link
       - Arquivo
     sort:
+      - property: Status
+        direction: DESC
       - property: Arquivo
         direction: DESC
       - property: file.folder
-        direction: ASC
-      - property: file.links
-        direction: DESC
-      - property: Status
         direction: ASC
     columnSize:
       note.Dificuldade: 112
