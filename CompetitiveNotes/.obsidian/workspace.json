@@ -13,28 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Welcome.md",
+                "file": "ED - Set, Map e Pair.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Welcome"
-            }
-          }
-        ]
-      },
-      {
-        "id": "73ace4567b438a43",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "ada82ea6c046d8f1",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "title": "ED - Set, Map e Pair"
             }
           }
         ]
@@ -94,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "83fbd7761ba05e63",
@@ -201,6 +185,29 @@
   },
   "active": "a97914bdef0a9f37",
   "lastOpenFiles": [
-    "Welcome.md"
+    "ED - Set, Map e Pair.md",
+    "Notas/ED - Resumo STL.md",
+    "Notas/ED - Vector e Algoritmos.md",
+    "Notas/ED - Stack, Queue e Deque.md",
+    "Problemas.base",
+    "Notas",
+    "Problems/ABC449 C - Comfortable Distance.md",
+    "Untitled.md",
+    "Problems",
+    "Problems/ABC449 A-Pi.md",
+    "Problems/ABC449 B - Deconstruct Chocolate.md",
+    "Exemplos_base/NSF_To-Do.md",
+    "Exemplos_base/Dificil_TLE.md",
+    "Exemplos_base/Medio_WA.md",
+    "Exemplos_base/Facil_AC.md",
+    "Exemplos_base",
+    "Welcome.md",
+    "Untitled 2.md",
+    "Untitled 4.md",
+    "Untitled 5.md",
+    "Untitled 6.md",
+    "Untitled 3.md",
+    "Untitled.base",
+    "Tracker de Problemas.md"
   ]
 }

@@ -1,0 +1,35 @@
+formulas:
+  Untitled: ""
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - '!file.inFolder("Exemplos_base")'
+        - file.ext != "base"
+        - file.folder == "Problems"
+    order:
+      - file.name
+      - file.links
+      - Status
+      - Dificuldade
+      - Link
+      - Arquivo
+    sort:
+      - property: Arquivo
+        direction: DESC
+      - property: file.folder
+        direction: ASC
+      - property: file.links
+        direction: DESC
+      - property: Status
+        direction: ASC
+    columnSize:
+      note.Dificuldade: 112
+  - type: table
+    name: View
+    order:
+      - file.name
+      - formula.Untitled
+  - type: list
+    name: View 2
