@@ -26,12 +26,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Manual.md",
+                "file": "01-Manual.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Manual"
+              "title": "01-Manual"
             }
           }
         ]
@@ -198,9 +198,19 @@
   },
   "active": "a97914bdef0a9f37",
   "lastOpenFiles": [
-    "Problems/CF 2209C - Find the Zero.md",
+    "Problems/1-1.md",
+    "Notas/Prefix-Sum.md",
+    "01-Manual.md",
+    "zz_images",
+    "zz_images/soma_de_prefixo.png",
+    "Pasted image 20260327100426.png",
+    "Notas/ED - Vector e Algoritmos.md",
+    "Notas/Teoria dos Números.md",
     "Problemas.base",
-    "Manual.md",
+    "Problems/Summation Game.md",
+    "Problems/CF Satisfying Constraints.md",
+    "Problems/CF 2090A - Treasure Hunt.md",
+    "Problems/CF 2209C - Find the Zero.md",
     "Problems/CF 2209B - Array.md",
     "Problems/CF 2209A - Flip Flop.md",
     "Problems/CF 948A - Protect Sheep.md",
@@ -208,7 +218,6 @@
     "Problems/CF 2204B - Right Maximum.md",
     "Problems/CF 2204A - Passing the Ball.md",
     "Problems/CF 2208C - Stamina and Tasks.md",
-    "Notas/Teoria dos Números.md",
     "Notas/Constructive.md",
     "Notas/Ad-Hoc.md",
     "Notas/ED - Set, Map e Pair.md",
@@ -217,16 +226,11 @@
     "Problems/ABC449 A-Pi.md",
     "Problems/CF 2208B -Cyclists.md",
     "Notas/ED - Resumo STL.md",
-    "Notas/ED - Vector e Algoritmos.md",
     "Notas/ED - Stack, Queue e Deque.md",
     "Notas",
     "Problems/ABC449 C - Comfortable Distance.md",
     "Problems",
-    "Exemplos_base/NSF_To-Do.md",
-    "Exemplos_base/Dificil_TLE.md",
-    "Exemplos_base/Medio_WA.md",
-    "Exemplos_base/Facil_AC.md",
-    "Exemplos_base",
+    "zz_Exemplos_base",
     "Untitled.base"
   ]
 }
