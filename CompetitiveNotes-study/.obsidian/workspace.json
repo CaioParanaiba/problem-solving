@@ -4,34 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "7c8d4fe883cf479e",
+        "id": "e58a2c81b6fa9b66",
         "type": "tabs",
         "children": [
           {
-            "id": "a97914bdef0a9f37",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Problemas.base",
-                "viewName": "Table"
-              },
-              "icon": "lucide-table",
-              "title": "Problemas"
-            }
-          },
-          {
-            "id": "e0e628f0807889bb",
+            "id": "e4c70408f36ce639",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Manual.md",
+                "file": "Algoritmos/Subarray Sum Equals K.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-Manual"
+              "title": "Subarray Sum Equals K"
+            }
+          },
+          {
+            "id": "01f84e06cc0c9598",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OBI 2022.1 DChuva.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "OBI 2022.1 DChuva"
             }
           }
         ]
@@ -193,20 +194,36 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "a97914bdef0a9f37",
+  "active": "e4c70408f36ce639",
   "lastOpenFiles": [
+    "z-templates/Algoritmo - Template.md",
+    "OBI 2022.1 DChuva.md",
+    "images/Pasted image 20260508183446.png",
+    "Algoritmos/Subarray Sum Equals K.md",
+    "images/Pasted image 20260508183115.png",
+    "images",
+    "Algoritmos/Shunting-yard Algoritm.md",
+    "Algoritmos/Untitled 1.md",
+    "Untitled.md",
+    "!Shunting-yard Algoritm.md",
+    "Recursos",
+    "Problemas",
+    "Algoritmos",
+    "Mocs - Mapas",
+    "z-templates",
+    "01-Manual.md",
+    "Problemas.base",
     "Problems/1-1.md",
     "Notas/Prefix-Sum.md",
-    "01-Manual.md",
     "zz_images",
     "zz_images/soma_de_prefixo.png",
     "Pasted image 20260327100426.png",
     "Notas/ED - Vector e Algoritmos.md",
     "Notas/Teoria dos Números.md",
-    "Problemas.base",
     "Problems/Summation Game.md",
     "Problems/CF Satisfying Constraints.md",
     "Problems/CF 2090A - Treasure Hunt.md",
@@ -220,17 +237,7 @@
     "Problems/CF 2208C - Stamina and Tasks.md",
     "Notas/Constructive.md",
     "Notas/Ad-Hoc.md",
-    "Notas/ED - Set, Map e Pair.md",
-    "Problems/CF 2208A - Bingo Candies.md",
-    "Problems/ABC449 B - Deconstruct Chocolate.md",
-    "Problems/ABC449 A-Pi.md",
-    "Problems/CF 2208B -Cyclists.md",
-    "Notas/ED - Resumo STL.md",
-    "Notas/ED - Stack, Queue e Deque.md",
     "Notas",
-    "Problems/ABC449 C - Comfortable Distance.md",
-    "Problems",
-    "zz_Exemplos_base",
-    "Untitled.base"
+    "Problems"
   ]
 }

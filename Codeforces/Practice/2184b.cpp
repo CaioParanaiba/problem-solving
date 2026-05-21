@@ -1,23 +1,28 @@
-#include <algorithm>
 #include <bits/stdc++.h>
 using namespace std;
 
 #define endl '\n'
-// #define int long long
+//#define int long long
 
 // const int MOD = 1e9 + 7;
 // const int INF = 1e18;
 
 void solve() {
-  int s, k, m;
+  long long s, k, m;
   cin >> s >> k >> m;
 
-  int tempo = 0;
-  if (s > k)
-    s = k;
-  if (k <= m)
-    // cout << s << '-' << max(m - (m / k) * k, 0) << endl;
-    tempo = max(s - max(m % k, 0), 0);
+  long long v = m / k;
+  long long topo;
+
+  if (v % 2 == 0) {
+    topo = s;
+  } else {
+    topo = min(s, k);
+  }
+
+  long long tempo0 = m % k;
+  
+  long long tempo = max((long long)0, topo - tempo0);
 
   cout << tempo << endl;
 }
