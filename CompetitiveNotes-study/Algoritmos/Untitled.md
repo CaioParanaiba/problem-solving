@@ -1,4 +1,4 @@
-<% await tp.file.move("/Algoritmos/" + tp.file.title) %>
+
 **Tags:** #grafos #cp4 #algoritmo 
 **Pré-requisitos:** [[Conceito A]], [[Conceito B]]
 **MOC**: [[MOC - Programação Competitiva]]

@@ -1,14 +1,14 @@
-<% await tp.file.move("/Algoritmos/" + tp.file.title) %>
+
 **Tags:** #grafos #cp4 #algoritmo 
 **Pré-requisitos:** [[Conceito A]], [[Conceito B]]
-**MOC**: [[MOC - Programação Competitiva]]
-**Autor:** [[Autor]]
+**MOC**: [[MOC - Estruturas de Dados]]
+**Autor:** [[Jon Bentley]]
 
 > [!abstract] 💡 O que é? (O Insight)
-> ...
+> Uma estrutura que permite fazer updates e consultas em range em um array em $O(\log(N))$
 
 ## ⚙️ Como funciona? (Passo a Passo)
-1. 
+Ela é criada com tamanho $4\cdot n$, onde $n$ é o tamanho do meu array onde farei as buscas e updates 
 
 ## ⏱️ Complexidade
 * **Tempo:** $O(N)$ 

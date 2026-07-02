@@ -1,2 +1,0 @@
-![[Shunting-yard Algoritm#^code]]
-

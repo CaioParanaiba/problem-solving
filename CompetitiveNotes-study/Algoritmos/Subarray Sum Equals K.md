@@ -1,6 +1,7 @@
 
-**Tags:** #grafos #cp4 #algoritmo 
+**Tags:** #cp4 #algoritmo 
 **Pré-requisitos:** [[hash-map]], [[prefix-sum]], [[arrays]]
+**MOC**: [[MOC - Técnicas e Paradigmas]]
 
 > [!abstract] 💡 O que é? (O Insight)
 > Quando precisamos achar quantas vezes (times) o sub-arrays que sua soma resulta em um valor K existem.

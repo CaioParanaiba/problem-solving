@@ -1,6 +1,7 @@
 **Tags:** #cp4 #algoritmo 
 **Pré-requisitos:** [[Algoritmos de Parsing]], [[Stack]]
-**Autor:** [[Disjktra]]
+**MOC**: [[MOC - Técnicas e Paradigmas]],[[MOC - Estruturas de Dados]]
+**Autor:** [[Edsger Disjktra]]
 
 > [!abstract] 💡 O que é? (O Insight)
 > Expressões posfixas são computacionalmente melhores que as infixas padrões, esse algoritmo converte expressões infixas em posfixas através de uma leitura e armazenamento em uma [[Stack]].
