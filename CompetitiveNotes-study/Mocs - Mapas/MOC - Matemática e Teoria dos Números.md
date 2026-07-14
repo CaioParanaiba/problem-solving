@@ -1,0 +1,1 @@
+[[Logaritmo base b]]

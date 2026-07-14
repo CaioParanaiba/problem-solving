@@ -1,7 +1,7 @@
 
 **Tags:** #grafos #cp4 #algoritmo 
 **Pré-requisitos:** [[Conceito A]], [[Conceito B]]
-**MOC**: [[MOC - Programação Competitiva]]
+**MOC**: 
 **Autor:** [[Autor]]
 
 > [!abstract] 💡 O que é? (O Insight)

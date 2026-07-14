@@ -2,3 +2,6 @@ Aqui entram as estratégias de resolução que não dependem de uma estrutura de
 
 [[Shunting-yard Algoritm]]
 [[Subarray Sum Equals K]]
+
+## Paradigma
+[[Guloso]]

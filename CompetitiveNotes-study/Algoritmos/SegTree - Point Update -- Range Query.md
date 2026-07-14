@@ -1,6 +1,6 @@
 
 **Tags:** #grafos #cp4 #algoritmo 
-**Pré-requisitos:** [[Conceito A]], [[Conceito B]]
+**Pré-requisitos:** 
 **MOC**: [[MOC - Estruturas de Dados]]
 **Autor:** [[Jon Bentley]]
 

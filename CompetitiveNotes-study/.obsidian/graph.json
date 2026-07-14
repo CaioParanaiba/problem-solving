@@ -8,17 +8,38 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "path:Notas  ",
+      "query": "path:\"Mocs - Mapas\"  ",
       "color": {
         "a": 1,
         "rgb": 14701138
       }
     },
     {
-      "query": "path:Problems  ",
+      "query": "path:Algoritmos  ",
       "color": {
         "a": 1,
         "rgb": 14725458
+      }
+    },
+    {
+      "query": "path:Problemas  ",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    },
+    {
+      "query": "path:NT  ",
+      "color": {
+        "a": 1,
+        "rgb": 5431378
+      }
+    },
+    {
+      "query": "",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
       }
     }
   ],
@@ -27,11 +48,11 @@
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
+  "collapse-forces": false,
+  "centerStrength": 0.202925731432858,
+  "repelStrength": 9.50083032138322,
   "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 1,
+  "linkDistance": 120,
+  "scale": 0.6763449239132484,
   "close": true
 }
