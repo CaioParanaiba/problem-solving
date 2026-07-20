@@ -1,8 +1,17 @@
+---
+aliases: [Dijkstra, Shortest Path, Caminho Mínimo]
+tags: #grafos #cp4 #algoritmo #obi #icpc
+data_criacao: 2024-01-15
+status: consolidado
+---
 
-**Tags:** #grafos #cp4 #algoritmo 
+# 📚 Algoritmo de Dijkstra
+
+**MOC:** [[MOC - Grafos]]
 **Pré-requisitos:** [[priority_queue]], [[BFS]]
-**MOC**:[[MOC - Grafos]]
-**Autor:** [[Edsger Disjktra]]
+**Autor:** [[Edsger Dijkstra]]
+
+---
 
 > [!abstract] 💡 O que é? (O Insight)
 > É uma [[BFS]] otimizada usando para calcular o *menor caminho* dentro de um GRAFO
@@ -16,11 +25,17 @@
 4. Definimos os parametros iniciais;
 5. Rodamos nosso algoritmo, de forma similar a [[BFS]];
 
-## ⏱️ Complexidade
-* **Tempo:** $O(E\space log(V))$ 
-* **Espaço:** $O(E\space + \space V)$ 
+---
 
-## 💻 Código Base
+## ⏱️ Complexidade
+
+* **Tempo:** $O(E\space log(V))$ 
+* **Espaço:** $O(E\space + \space V)$
+
+--- 
+
+## 💻 Snippet de Ouro
+
 ```c++
 #include <iostream>
 #include <vector>
@@ -69,5 +84,31 @@ void dijkstra(int inicial) {
 }
 ```
 
+---
+
+## ⚠️ Pegadinhas Clássicas e Edge Cases
+
+- [ ] **Overflow:** Usar `long long` para distâncias (não `int`). Somas intermediárias podem estourar.
+
+- [ ] **Poda essencial:** Sempre checar `if (wu > dis[u]) continue;` para ignorar estados desatualizados na fila.
+
+- [ ] **Grafos desconexos:** Verificar se `dis[destino] == INF` significa que não há caminho.
+
+- [ ] **Pesos negativos:** Dijkstra **NÃO funciona** com pesos negativos. Use Bellman-Ford nesses casos.
+
+- [ ] **Múltiplos testes:** Lembrar de limpar adjacências (`adj[i].clear()`) e resetar distâncias entre casos de teste.
+
+- [ ] **Esquecer Min-Heap:** Por padrão, `priority_queue` é Max-Heap. Usar `greater<>` para Min-Heap é essencial.
+
+---
+
 ## 🎯 Problemas Práticos
-[X] https://codeforces.com/gym/104415/problem/J - uso de log
+
+| Problema | Juiz | Dificuldade | Status | Notas / Pegadinhas |
+| :--- | :--- | :---: | :---: | :--- |
+| **[Problema J](https://codeforces.com/gym/104415/problem/J)** | Codeforces | 🟡 Média | ✅ Feito | Uso de log |
+
+---
+
+## 🔄 Histórico de Revisão & Erros Comuns
+* *Anotações pessoais de erros em simulados.*

@@ -1,12 +1,25 @@
-Tags: #stl #cp4 #estrutura #primitiva #bst #set #multiset
-Pré-requisitos: C++ Básico
-MOC: [[MOC - ED]]
+---
+aliases: [std::set, std::multiset, Ordered Set, BST]
+tags: #stl #cp4 #estrutura #primitiva #bst #set #multiset
+data_criacao: 2024-01-15
+status: consolidado
+---
+
+# 📚 set
+
+**MOC:** [[MOC - Estruturas de Dados]]
+**Pré-requisitos:** C++ Básico
+
+---
 
 ## 💡 O que é? (O Insight)
 Árvores de Busca Binária balanceadas (implementadas na STL como **Red-Black Trees**). Mantêm os elementos sempre ordenados e permitem buscas logarítmicas. O `set` armazena exclusivamente chaves únicas; o `multiset` permite valores duplicados.
 *Aviso de Maratona:* O overhead de memória e constante oculta de tempo é alto devido às alocações dinâmicas de nós individuais e saltos de ponteiros em memória fragmentada.
 
+---
+
 ## ⏱️ Complexidade dos Métodos
+
 | Método | Complexidade | Uso em Maratona |
 |---|---|---|
 | `.insert(val)` / `.emplace(val)` | $O(\log N)$ | Insere preservando a ordenação da árvore |
@@ -16,25 +29,28 @@ MOC: [[MOC - ED]]
 | `.lower_bound(val)` | $O(\log N)$ | Retorna iterador para o **primeiro elemento $\ge$ val** |
 | `.upper_bound(val)` | $O(\log N)$ | Retorna iterador para o **primeiro elemento $>$ val** |
 
-## ⚠️ Gotchas & Edge Cases (Onde quebra)
+---
 
-- **O Bug do Destruidor no `multiset::erase(val)` (WA/RTE fatal):** Em um `multiset` contendo `{5, 5, 5}`, chamar `ms.erase(5)` remove **todas as 3 cópias de uma vez**, destruindo sua lógica de contagem em janelas deslizantes ou linhas de varredura.
+## ⚠️ Pegadinhas Clássicas e Edge Cases
 
+- [ ] **O Bug do Destruidor no `multiset::erase(val)` (WA/RTE fatal):** Em um `multiset` contendo `{5, 5, 5}`, chamar `ms.erase(5)` remove **todas as 3 cópias de uma vez**, destruindo sua lógica de contagem em janelas deslizantes ou linhas de varredura.
   - *Correção em O(1) amortizado:* Passe o iterador retornado pelo `.find()`:
-  
     ```cpp
     auto it = ms.find(5);
     if (it != ms.end()) ms.erase(it); // Apaga estritamente UMA instância
     ```
 
-- **TLE por Função Genérica de Busca (O Erro de $O(N)$):** Escrever `auto it = std::lower_bound(s.begin(), s.end(), val);`. Como os iteradores de árvores não são de acesso aleatório (*Random Access Iterators*), a função global da STL é obrigada a avançar ponteiro por ponteiro, rodando em **$O(N)$**.
+- [ ] **TLE por Função Genérica de Busca (O Erro de $O(N)$):** Escrever `auto it = std::lower_bound(s.begin(), s.end(), val);`. Como os iteradores de árvores não são de acesso aleatório (*Random Access Iterators*), a função global da STL é obrigada a avançar ponteiro por ponteiro, rodando em **$O(N)$**.
   - *Correção:* Chame exclusivamente o método membro, que desce a árvore em **$O(\log N)$**: `auto it = s.lower_bound(val);`.
 
-- **Erro de Compilação por Imutabilidade:** Você **não pode** modificar o valor de um elemento apontado pelo iterador de um set (`*it = x;`), pois os iteradores são implicitamente `const`. Tentar fazer isso quebraria a ordenação estrutural da árvore. Para alterar, você deve remover o antigo (`.erase(it)`) e inserir o novo (`.insert(x)`).
+- [ ] **Erro de Compilação por Imutabilidade:** Você **não pode** modificar o valor de um elemento apontado pelo iterador de um set (`*it = x;`), pois os iteradores são implicitamente `const`. Tentar fazer isso quebraria a ordenação estrutural da árvore. Para alterar, você deve remover o antigo (`.erase(it)`) e inserir o novo (`.insert(x)`).
 
-- **A Armadilha do `.count()` em `multiset`:** Se um `multiset` tiver $K$ cópias de um elemento, chamar `ms.count(val)` roda em tempo **$O(\log N + K)$**. Se $K$ for próximo de $N$, isso degrada para uma busca linear! Se quiser apenas testar existência, use `.find(val) != ms.end()`.
+- [ ] **A Armadilha do `.count()` em `multiset`:** Se um `multiset` tiver $K$ cópias de um elemento, chamar `ms.count(val)` roda em tempo **$O(\log N + K)$**. Se $K$ for próximo de $N$, isso degrada para uma busca linear! Se quiser apenas testar existência, use `.find(val) != ms.end()`.
+
+---
 
 ## 💻 Snippet de Ouro: Lower/Upper Bound Seguro
+
 Busca rápida para encontrar elementos que sejam maiores, menores ou limites exatos sem cair em Segmentation Fault por desreferenciar `.end()`.
 
 ```cpp
@@ -67,12 +83,19 @@ void exemplo_bound() {
 }
 ```
 
-## Problemas Práticos & Ligações
+---
 
-- [[Line Sweep]] (Algoritmos de Linha de Varredura para geometria plana, interseção de retas ou união de retângulos).
+## 🎯 Problemas Práticos
 
-- [[Dijkstra]] (Implementação alternativa usando `set<pair<int, int>>` no lugar da priority_queue quando o problema exige `.erase()` de vértices com distâncias antigas via _Decrease-Key_).
+| Problema | Juiz | Dificuldade | Status | Notas / Pegadinhas |
+| :--- | :--- | :---: | :---: | :--- |
+| [[Line Sweep]] | - | - | - | Linha de Varredura para geometria plana |
+| [[Dijkstra]] | - | - | - | Implementação alternativa com `set<pair<int, int>>` |
+| [[Convex Hull Trick]] | - | - | - | Versão dinâmica com custom comparator |
 
-- [[Convex Hull Trick]] (Versão dinâmica usando `multiset` com custom comparator onde a ordem das retas é mantida em tempo real).
+**Ligações:** Manutenção dinâmica de máximo/mínimo/mediana com remoções no meio do processo (quando a `priority_queue` falha por não ter `.erase()`).
 
-- Manutenção dinâmica de máximo/mínimo/mediana com remoções no meio do processo (quando a `priority_queue` falha por não ter `.erase()`).
+---
+
+## 🔄 Histórico de Revisão & Erros Comuns
+* *Anotações pessoais de erros em simulados.*

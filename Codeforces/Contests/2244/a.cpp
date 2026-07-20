@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+#define int long long
+#define pb push_back
+#define all(x) (x).begin(), (x).end()
+#define sz(x) (int)(x).size()
+
+using vi = vector<int>;
+using pii = pair<int, int>;
+
+const int MOD = 1e9 + 7;
+const int INF = 1e18;
+
+void solve() {
+  string s;
+  int n;
+  cin >> n >> s;
+
+  int tam = s.size();
+
+  int maior = 0;
+
+  int cont = 0;
+  for (int i = 0; i < tam; i++) {
+    if (s[i] == '*') {
+      maior = max(maior, cont);
+      cont = 0;
+    } else {
+      cont++;
+    }
+  }
+
+  maior = max(maior, cont);
+
+  cout << (maior + 1) / 2 << endl;
+}
+
+signed main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
+  int t = 1;
+  cin >> t;
+  while (t--) {
+    solve();
+  }
+
+  return 0;
+}

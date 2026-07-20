@@ -1,7 +1,16 @@
+---
+aliases: [Subarray Sum K, Prefix Sum Hash]
+tags: #cp #algoritmo #array #hash #prefix_sum #obi #icpc
+data_criacao: 2024-01-15
+status: consolidado
+---
 
-**Tags:** #cp4 #algoritmo 
-**Pré-requisitos:** [[hash-map]], [[prefix-sum]], [[arrays]]
-**MOC**: [[MOC - Técnicas e Paradigmas]]
+# 📚 Subarray Sum Equals K
+
+**MOC:** [[MOC - Técnicas e Paradigmas]]
+**Pré-requisitos:** [[unordered_map]], [[Prefixo 1D]], [[arrays]]
+
+---
 
 > [!abstract] 💡 O que é? (O Insight)
 > Quando precisamos achar quantas vezes (times) o sub-arrays que sua soma resulta em um valor K existem.
@@ -15,11 +24,17 @@
 
 ![[Pasted image 20260508183115.png|1000]]
 
+---
+
 ## ⏱️ Complexidade
+
 * **Tempo:** $O(N)$ 
 * **Espaço:** $O(N)$
 
-## 💻 Código Base
+---
+
+## 💻 Snippet de Ouro
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -43,8 +58,28 @@ int SubArraySum(int *num,int n,int k) {
 	return times;
 }
 ```
-^code
+
+---
+
+## ⚠️ Pegadinhas Clássicas e Edge Cases
+
+- [ ] **Inicialização do mapa:** Sempre inicializar `m[0] = 1` para capturar subarrays que começam no índice 0.
+
+- [ ] **Overflow:** Com valores grandes ou arrays longos, usar `long long` para prefix e k.
+
+- [ ] **Anti-Hash TLE:** Se usar `unordered_map` em competições, considerar custom hash (ver nota em [[unordered_map]]).
+
+- [ ] **Ordem de operações:** Importante somar `m[prefix_k]` **antes** de incrementar `m[prefix]++` para evitar contar o próprio elemento.
+
+---
 
 ## 🎯 Problemas Práticos
-- [ ] [[OBI 2022.1 DChuva]] - **Status:** Feito / Pra fazer
-- [ ] Onde falhei: (Anotar a pegadinha do problema)
+
+| Problema | Juiz | Dificuldade | Status | Notas / Pegadinhas |
+| :--- | :--- | :---: | :---: | :--- |
+| [[OBI 2022.1 DChuva]] | OBI | 🟡 Média | 🔲 Pra fazer | Aplicação direta do conceito |
+
+---
+
+## 🔄 Histórico de Revisão & Erros Comuns
+* *Anotações pessoais de erros em simulados.*

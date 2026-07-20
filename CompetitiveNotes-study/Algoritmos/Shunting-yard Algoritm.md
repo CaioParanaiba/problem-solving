@@ -1,7 +1,17 @@
-**Tags:** #cp4 #algoritmo 
+---
+aliases: [Shunting Yard, Infix to Postfix, Expression Parsing]
+tags: #cp #algoritmo #parsing #stack #obi #icpc
+data_criacao: 2024-01-15
+status: consolidado
+---
+
+# 📚 Shunting-yard Algorithm
+
+**MOC:** [[MOC - Técnicas e Paradigmas]], [[MOC - Estruturas de Dados]]
 **Pré-requisitos:** [[Algoritmos de Parsing]], [[Stack]]
-**MOC**: [[MOC - Técnicas e Paradigmas]],[[MOC - Estruturas de Dados]]
-**Autor:** [[Edsger Disjktra]]
+**Autor:** [[Edsger Dijkstra]]
+
+---
 
 > [!abstract] 💡 O que é? (O Insight)
 > Expressões posfixas são computacionalmente melhores que as infixas padrões, esse algoritmo converte expressões infixas em posfixas através de uma leitura e armazenamento em uma [[Stack]].
@@ -12,11 +22,16 @@
 3. Se for bracket aberto -> armazena na stack;
 4. Se for bracket fechado -> remove tudo dentro da stack até o ultimo bracket;
 
+---
+
 ## ⏱️ Complexidade
+
 * **Tempo:** $O(N)$ 
 * **Espaço:** $O(N)$
 
-## 💻 Código Base
+---
+
+## 💻 Snippet de Ouro
 
 ```cpp
 #include <bits/stdc++.h>
@@ -66,9 +81,29 @@ string shunting_yard(string infix){
 	return posfix;
 }
 ```
-^code
+
+---
+
+## ⚠️ Pegadinhas Clássicas e Edge Cases
+
+- [ ] **Precedência de operadores:** Implementação básica não respeita precedência (* e / antes de + e -). Necessário adicionar lógica de prioridade.
+
+- [ ] **Parênteses desbalanceados:** Verificar se há match correto entre abertura e fechamento de brackets.
+
+- [ ] **Caracteres inválidos:** Validar entrada antes de processar para evitar comportamento indefinido.
+
+- [ ] **Stack vazia no pop:** Sempre verificar `!st.empty()` antes de acessar `.top()` ou `.pop()`.
+
+---
 
 ## 🎯 Problemas Práticos
-- [ ] Nome do Problema (Link pro Codeforces/CSES) - **Status:** Feito / Pra fazer
-- Onde falhei: (Anotar a pegadinha do problema)
+
+| Problema | Juiz | Dificuldade | Status | Notas / Pegadinhas |
+| :--- | :--- | :---: | :---: | :--- |
+| *(A ser preenchido)* | - | - | - | Parsing de expressões, validação de parênteses |
+
+---
+
+## 🔄 Histórico de Revisão & Erros Comuns
+* *Anotações pessoais de erros em simulados.*
 
